@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerHuman HRIS - Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/svgs/logo-mark.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <div
+      class="fixed z-[999] hidden h-full w-full overflow-y-auto bg-cod-gray-900 text-gray-50 lg:block lg:max-w-[270px]"
+      id="sidebarHRIS"
+    >
+      <div class="flex flex-col gap-y-[30px] px-2 py-[30px]">
+        <div class="-mt-3 flex items-center justify-between">
+          <a href="#" class="flex justify-center">
+            <img src="../assets/svgs/logo-type.svg" alt="" />
+          </a>
+          <a href="#" id="toggleCloseSidebar" class="lg:hidden">
+            <svg
+              class="h-6 w-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm text-gray-100">Master</div>
+          <a href="index.html" class="nav-link active" title="Kategori">
+            <img src="../assets/svgs/ic-box.svg" alt="" />
+            <span>Kategori</span>
+          </a>
+          <a href="produk.html" class="nav-link" title="Produk">
+            <img src="../assets/svgs/ic-users.svg" alt="" />
+            <span>Produk</span>
+          </a>
+          <a href="member.html" class="nav-link" title="Member">
+            <img src="../assets/svgs/ic-briefcase.svg" alt="" />
+            <span>Member</span>
+          </a>
+          <a href="supplier.html" class="nav-link" title="Supplier">
+            <img src="../assets/svgs/ic-flag.svg" alt="" />
+            <span>Supplier</span>
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm text-gray-100">Transaksi</div>
+          <a href="pengeluaran.html" class="nav-link" title="Pengeluaran">
+            <img src="../assets/svgs/ic-box.svg" alt="" />
+            <span>Pengeluaran</span>
+          </a>
+          <a href="pembelian.html" class="nav-link" title="Pembelian">
+            <img src="../assets/svgs/ic-home.svg" alt="" />
+            <span>Pembelian</span>
+          </a>
+          <a href="penjualan.html" class="nav-link" title="Penjualan">
+            <img src="../assets/svgs/ic-gift.svg" alt="" />
+            <span>Penjualan</span>
+          </a>
+          <a
+            href="transaksi_aktif.html"
+            class="nav-link"
+            title="Transaksi Aktif"
+          >
+            <img src="../assets/svgs/ic-settings.svg" alt="" />
+            <span>Transaksi Aktif</span>
+          </a>
+          <a href="transaksi_baru.html" class="nav-link" title="Transaksi Baru">
+            <img src="../assets/svgs/ic-signout.svg" alt="" />
+            <span>Transaksi Baru</span>
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm text-gray-100">Report</div>
+          <a href="#" class="nav-link" title="Laporan">
+            <img src="../assets/svgs/ic-dollar.svg" alt="" />
+            <span>Laporan</span>
+          </a>
+        </div>
+      </div>
+      <div class="bottom-0 -mt-3 flex flex-col px-2">
+        <a href="#" class="nav-link" title="Pengaturan">
+          <img src="../assets/svgs/ic-settings.svg" alt="" />
+          <span>Pengaturan</span>
+        </a>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="py-[30px] lg:ml-[20px] lg:pl-0 lg:pr-[30px] xl:ml-[300px]">
+      <!-- Top Section -->
+      <section
+        class="flex flex-col flex-wrap justify-between gap-6 md:flex-row md:items-center"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <a href="#" id="toggleOpenSidebar" class="lg:hidden">
+            <svg
+              class="h-6 w-6 text-dark"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              ></path>
+            </svg>
+          </a>
+          <div class="text-[32px] font-semibold text-cod-gray-900">
+            Kategori
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <form class="w-full shrink md:w-[516px]">
+            <input
+              type="text"
+              name=""
+              id=""
+              class="input-field form-icon-search w-full !border-none italic !outline-none ring-congress-blue-200 transition-all duration-300 focus:ring-2"
+              placeholder="Search people, user-f, project"
+            />
+          </form>
+          <a
+            href="#"
+            class="notification-dot relative h-[46px] w-[46px] flex-none rounded-full bg-white p-[11px]"
+          >
+            <img src="../assets/svgs/ic-bell.svg" alt="" />
+          </a>
+          <a
+            class="relative h-[46px] w-[46px] flex-none rounded-full bg-white p-1"
+          >
+            <img src="../assets/images/user-f-1.png" alt="" />
+          </a>
+        </div>
+      </section>
+
+      <section class="pt-5">
+        <!-- Section Header -->
+        <div class="mb-3">
+          <div class="flex items-center justify-end gap-4">
+            <ol class="inline-flex items-center space-x-1">
+              <li>
+                <div class="flex items-center text-saffron-mango-600">
+                  <svg
+                    class="me-2 h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div class="flex items-center">
+                  <svg
+                    class="mx-1 h-3 w-3 text-cod-gray-600 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 9 4-4-4-4"
+                    />
+                  </svg>
+                  <span class="ms-1 text-sm font-medium text-cod-gray-900"
+                    >Kategori</span
+                  >
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="pt-5">
+        <div class="card min-h-full min-w-full">
+          <div class="flex justify-start">
+            <button
+              class="btn flex items-center gap-x-2 bg-saffron-mango-600 text-gray-50"
+            >
+              <!-- <img src="../assets/svgs/ric-plus.svg" alt="add" /> -->
+              <i class="fa fa-plus-circle"></i>
+              Tambah Data
+            </button>
+          </div>
+          <div class="flex-auto px-0 pb-2 pt-0">
+            <div class="overflow-x-auto p-0">
+              <table
+                class="mb-0 w-full table-auto border-collapse items-center border-white/40 align-top"
+              >
+                <thead class="align-bottom">
+                  <tr>
+                    <th
+                      class="text-xxs border-b-solid tracking-none border-collapse whitespace-nowrap border-b border-white/40 bg-transparent px-6 py-3 text-left align-middle font-bold uppercase text-cod-gray-800 shadow-none"
+                    >
+                      Author
+                    </th>
+                    <th
+                      class="text-xxs border-b-solid tracking-none border-collapse whitespace-nowrap border-b border-white/40 bg-transparent px-6 py-3 pl-2 text-left align-middle font-bold uppercase text-cod-gray-800 shadow-none"
+                    >
+                      Function
+                    </th>
+                    <th
+                      class="text-xxs border-b-solid tracking-none border-collapse whitespace-nowrap border-b border-white/40 bg-transparent px-6 py-3 text-center align-middle font-bold uppercase text-cod-gray-800 shadow-none"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="text-xxs border-b-solid tracking-none border-collapse whitespace-nowrap border-b border-white/40 bg-transparent px-6 py-3 text-center align-middle font-bold uppercase text-cod-gray-800 shadow-none"
+                    >
+                      Employed
+                    </th>
+                    <th
+                      class="tracking-none border-collapse whitespace-nowrap border-b border-solid border-white/40 bg-transparent px-6 py-3 align-middle font-semibold capitalize text-cod-gray-800 shadow-none"
+                    ></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <div class="flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/images/user-f-2.png"
+                            class="mr-4 inline-flex h-9 w-9 items-center justify-center rounded-xl text-sm text-cod-gray-900 transition-all duration-200 ease-in-out"
+                            alt="user1"
+                          />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                          <h6
+                            class="mb-0 text-sm leading-normal text-cod-gray-900"
+                          >
+                            John Michael
+                          </h6>
+                          <p
+                            class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                          >
+                            john@creative-tim.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <p
+                        class="mb-0 text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Manager
+                      </p>
+                      <p
+                        class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Organization
+                      </p>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle text-sm leading-normal shadow-transparent"
+                    >
+                      <span
+                        class="rounded-1.8 py-1.4 inline-block whitespace-nowrap bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-center align-baseline text-xs font-bold uppercase leading-none text-white"
+                        >Online</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle shadow-transparent"
+                    >
+                      <span
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                        >23/04/18</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <a
+                        href="javascript:;"
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <div class="flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/images/user-f-3.png"
+                            class="mr-4 inline-flex h-9 w-9 items-center justify-center rounded-xl text-sm text-white transition-all duration-200 ease-in-out"
+                            alt="user2"
+                          />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                          <h6
+                            class="mb-0 text-sm leading-normal text-cod-gray-900"
+                          >
+                            Alexa Liras
+                          </h6>
+                          <p
+                            class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                          >
+                            alexa@creative-tim.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <p
+                        class="mb-0 text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Programator
+                      </p>
+                      <p
+                        class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Developer
+                      </p>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle text-sm leading-normal shadow-transparent"
+                    >
+                      <span
+                        class="rounded-1.8 py-1.4 inline-block whitespace-nowrap bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-center align-baseline text-xs font-bold uppercase leading-none text-white"
+                        >Offline</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle shadow-transparent"
+                    >
+                      <span
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                        >11/01/19</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <a
+                        href="javascript:;"
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <div class="flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/images/user-f-4.png"
+                            class="mr-4 inline-flex h-9 w-9 items-center justify-center rounded-xl text-sm text-cod-gray-900 transition-all duration-200 ease-in-out"
+                            alt="user3"
+                          />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                          <h6
+                            class="mb-0 text-sm leading-normal text-cod-gray-900"
+                          >
+                            Laurent Perrier
+                          </h6>
+                          <p
+                            class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                          >
+                            laurent@creative-tim.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <p
+                        class="text-cod-gray-900opacity-80 mb-0 text-xs font-semibold leading-tight"
+                      >
+                        Executive
+                      </p>
+                      <p
+                        class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Projects
+                      </p>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle text-sm leading-normal shadow-transparent"
+                    >
+                      <span
+                        class="rounded-1.8 py-1.4 inline-block whitespace-nowrap bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-center align-baseline text-xs font-bold uppercase leading-none text-white"
+                        >Online</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle shadow-transparent"
+                    >
+                      <span
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                        >19/09/17</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <a
+                        href="javascript:;"
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <div class="flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/images/user-f-3.png"
+                            class="mr-4 inline-flex h-9 w-9 items-center justify-center rounded-xl text-sm text-cod-gray-900 transition-all duration-200 ease-in-out"
+                            alt="user4"
+                          />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                          <h6
+                            class="mb-0 text-sm leading-normal text-cod-gray-900"
+                          >
+                            Michael Levi
+                          </h6>
+                          <p
+                            class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                          >
+                            michael@creative-tim.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <p
+                        class="mb-0 text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Programator
+                      </p>
+                      <p
+                        class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Developer
+                      </p>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle text-sm leading-normal shadow-transparent"
+                    >
+                      <span
+                        class="rounded-1.8 py-1.4 inline-block whitespace-nowrap bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-center align-baseline text-xs font-bold uppercase leading-none text-white"
+                        >Online</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle shadow-transparent"
+                    >
+                      <span
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                        >24/12/08</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <a
+                        href="javascript:;"
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <div class="flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/images/user-f-2.png"
+                            class="mr-4 inline-flex h-9 w-9 items-center justify-center rounded-xl text-sm text-cod-gray-900 transition-all duration-200 ease-in-out"
+                            alt="user5"
+                          />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                          <h6
+                            class="mb-0 text-sm leading-normal text-cod-gray-900"
+                          >
+                            Richard Gran
+                          </h6>
+                          <p
+                            class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                          >
+                            richard@creative-tim.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <p
+                        class="mb-0 text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Manager
+                      </p>
+                      <p
+                        class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Executive
+                      </p>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle text-sm leading-normal shadow-transparent"
+                    >
+                      <span
+                        class="rounded-1.8 py-1.4 inline-block whitespace-nowrap bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-center align-baseline text-xs font-bold uppercase leading-none text-white"
+                        >Offline</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 text-center align-middle shadow-transparent"
+                    >
+                      <span
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                        >04/10/21</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b border-white/40 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <a
+                        href="javascript:;"
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="whitespace-nowrap border-b-0 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <div class="flex px-2 py-1">
+                        <div>
+                          <img
+                            src="../assets/images/user-f-4.png"
+                            class="mr-4 inline-flex h-9 w-9 items-center justify-center rounded-xl text-sm text-cod-gray-900 transition-all duration-200 ease-in-out"
+                            alt="user6"
+                          />
+                        </div>
+                        <div class="flex flex-col justify-center">
+                          <h6
+                            class="mb-0 text-sm leading-normal text-cod-gray-900"
+                          >
+                            Miriam Eric
+                          </h6>
+                          <p
+                            class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                          >
+                            miriam@creative-tim.com
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b-0 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <p
+                        class="mb-0 text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Programtor
+                      </p>
+                      <p
+                        class="mb-0 text-xs leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Developer
+                      </p>
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b-0 bg-transparent p-2 text-center align-middle text-sm leading-normal shadow-transparent"
+                    >
+                      <span
+                        class="rounded-1.8 py-1.4 inline-block whitespace-nowrap bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-center align-baseline text-xs font-bold uppercase leading-none text-white"
+                        >Offline</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b-0 bg-transparent p-2 text-center align-middle shadow-transparent"
+                    >
+                      <span
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                        >14/09/20</span
+                      >
+                    </td>
+                    <td
+                      class="whitespace-nowrap border-b-0 bg-transparent p-2 align-middle shadow-transparent"
+                    >
+                      <a
+                        href="javascript:;"
+                        class="text-xs font-semibold leading-tight text-cod-gray-900 opacity-80"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/sidebarToggler.js"></script>
+  </body>
+</html>

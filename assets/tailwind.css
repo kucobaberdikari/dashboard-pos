@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .flex::before,
+  .flex::after {
+    display: none !important;
+  }
+
+  body {
+    @apply bg-cod-gray-100 font-poppins;
+  }
+}
+
+@layer components {
+  .card {
+    @apply relative flex flex-col gap-y-4 rounded-[26px] bg-white p-6 px-4 md:max-w-[500px];
+  }
+
+  .input-field {
+    @apply rounded-[100px] px-6 py-[11px] text-dark outline outline-[1.4px] outline-dark  placeholder:text-grey focus:outline-primary;
+  }
+
+  .btn {
+    @apply rounded-full px-7 py-[11px] text-center font-semibold capitalize;
+  }
+
+  .btn-primary {
+    @apply bg-congress-blue-500 text-white;
+  }
+
+  .btn-primary:hover {
+    @apply bg-congress-blue-800 text-white;
+  }
+}
+
+@layer utilities {
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 py-2 pl-3;
+  }
+
+  .nav-link:hover {
+    @apply rounded-e-xl bg-gray-50 bg-opacity-30 text-cod-gray-200 brightness-0 invert;
+  }
+
+  .nav-link img {
+    @apply m-1;
+    stroke: #abb3c4 !important;
+  }
+
+  .nav-link.active {
+    @apply border-l-4 border-l-saffron-mango-300 font-semibold text-saffron-mango-300;
+  }
+
+  .nav-link.active img {
+    @apply brightness-0 invert;
+  }
+
+  .form-icon-search {
+    @apply bg-[center_right_24px] bg-no-repeat sm:bg-[url('../assets/svgs/ic-search.svg')];
+  }
+
+  .form-icon-chevron_down {
+    @apply bg-[url('../assets/svgs/ic-chevron-down.svg')] bg-[center_right_24px] bg-no-repeat;
+  }
+
+  .notification-dot {
+    @apply after:absolute after:right-[15px] after:top-[12px] after:z-30 after:h-[8px] after:w-[8px] after:content-end after:rounded-full after:bg-saffron-mango-600;
+  }
+
+  .notification-dot:hover {
+    @apply bg-fountain-blue-300 bg-opacity-40;
+  }
+
+  .union-images img,
+  .union-images span {
+    @apply -ml-2 h-9 w-9 rounded-full outline outline-2 outline-white first:ml-0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5a5a5;
+  border-radius: 99px;
+  margin-right: 6px;
+  margin-left: 6px;
+}

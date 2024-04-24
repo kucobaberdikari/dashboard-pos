@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerHuman HRIS - Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../assets/svgs/logo-mark.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <div
+      class="fixed z-[999] hidden h-full w-full overflow-y-auto bg-cod-gray-900 text-gray-50 lg:block lg:max-w-[270px]"
+      id="sidebarHRIS"
+    >
+      <div class="flex flex-col gap-y-[30px] px-2 py-[30px]">
+        <div class="-mt-3 flex items-center justify-between">
+          <a href="#" class="flex justify-center">
+            <img src="../assets/svgs/logo-type.svg" alt="" />
+          </a>
+          <a href="#" id="toggleCloseSidebar" class="lg:hidden">
+            <svg
+              class="h-6 w-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm text-gray-100">Master</div>
+          <a href="kategori.html" class="nav-link" title="Kategori">
+            <img src="../assets/svgs/ic-box.svg" alt="" />
+            <span>Kategori</span>
+          </a>
+          <a href="produk.html" class="nav-link" title="Produk">
+            <img src="../assets/svgs/ic-users.svg" alt="" />
+            <span>Produk</span>
+          </a>
+          <a href="member.html" class="nav-link" title="Member">
+            <img src="../assets/svgs/ic-briefcase.svg" alt="" />
+            <span>Member</span>
+          </a>
+          <a href="supplier.html" class="nav-link" title="Supplier">
+            <img src="../assets/svgs/ic-flag.svg" alt="" />
+            <span>Supplier</span>
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm text-gray-100">Transaksi</div>
+          <a href="pengeluaran.html" class="nav-link" title="Pengeluaran">
+            <img src="../assets/svgs/ic-box.svg" alt="" />
+            <span>Pengeluaran</span>
+          </a>
+          <a href="pembelian.html" class="nav-link" title="Pembelian">
+            <img src="../assets/svgs/ic-home.svg" alt="" />
+            <span>Pembelian</span>
+          </a>
+          <a href="penjualan.html" class="nav-link" title="Penjualan">
+            <img src="../assets/svgs/ic-gift.svg" alt="" />
+            <span>Penjualan</span>
+          </a>
+          <a
+            href="transaksi_aktif.html"
+            class="nav-link"
+            title="Transaksi Aktif"
+          >
+            <img src="../assets/svgs/ic-settings.svg" alt="" />
+            <span>Transaksi Aktif</span>
+          </a>
+          <a href="transaksi_baru.html" class="nav-link" title="Transaksi Baru">
+            <img src="../assets/svgs/ic-signout.svg" alt="" />
+            <span>Transaksi Baru</span>
+          </a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="text-sm text-gray-100">Report</div>
+          <a href="#" class="nav-link" title="Laporan">
+            <img src="../assets/svgs/ic-dollar.svg" alt="" />
+            <span>Laporan</span>
+          </a>
+        </div>
+      </div>
+      <div class="bottom-0 -mt-3 flex flex-col px-2">
+        <a href="#" class="nav-link" title="Pengaturan">
+          <img src="../assets/svgs/ic-settings.svg" alt="" />
+          <span>Pengaturan</span>
+        </a>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="py-[30px] lg:ml-[20px] lg:pl-0 lg:pr-[30px] xl:ml-[300px]">
+      <!-- Top Section -->
+      <section
+        class="flex flex-col flex-wrap justify-between gap-6 md:flex-row md:items-center"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <a href="#" id="toggleOpenSidebar" class="lg:hidden">
+            <svg
+              class="h-6 w-6 text-dark"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              ></path>
+            </svg>
+          </a>
+          <div class="text-[32px] font-semibold text-dark">Overview</div>
+        </div>
+        <div class="flex items-center gap-4">
+          <form class="w-full shrink md:w-[516px]">
+            <input
+              type="text"
+              name=""
+              id=""
+              class="input-field form-icon-search w-full !border-none italic !outline-none ring-congress-blue-200 transition-all duration-300 focus:ring-2"
+              placeholder="Search people, team, project"
+            />
+          </form>
+          <a
+            href="#"
+            class="notification-dot relative h-[46px] w-[46px] flex-none rounded-full bg-white p-[11px]"
+          >
+            <img src="../assets/svgs/ic-bell.svg" alt="" />
+          </a>
+          <a
+            class="relative h-[46px] w-[46px] flex-none rounded-full bg-white p-1"
+          >
+            <img src="../assets/images/user-f-1.png" alt="" />
+          </a>
+        </div>
+      </section>
+
+      <section class="pt-[20px]">
+        <!-- Section Header -->
+        <div class="mb-[30px]">
+          <div class="flex items-center justify-between gap-6">
+            <div>
+              <div class="text-xl font-medium text-dark">Statistics</div>
+              <p class="text-gray-500">Your business growth</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:gap-11">
+          <div class="card min-h-[200px] !gap-y-10">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-grey">Employees</p>
+                <div class="mt-[6px] text-[32px] font-bold text-dark">0</div>
+              </div>
+              <a href="employee_create.html">
+                <img src="../assets/svgs/ric-plus.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="card min-h-[200px] !gap-y-10">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-grey">Teams</p>
+                <div class="mt-[6px] text-[32px] font-bold text-dark">0</div>
+              </div>
+              <a href="#">
+                <img src="../assets/svgs/ric-plus.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="card min-h-[200px] !gap-y-10">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-grey">Projects</p>
+                <div class="mt-[6px] text-[32px] font-bold text-dark">0</div>
+              </div>
+              <a href="#">
+                <img src="../assets/svgs/ric-plus.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pt-[50px]">
+        <div class="grid gap-11 md:grid-cols-2">
+          <!-- Documents -->
+          <div>
+            <!-- Section Header -->
+            <div class="mb-[30px]">
+              <div class="flex items-center justify-between gap-6">
+                <div>
+                  <div class="text-xl font-medium text-dark">Documents</div>
+                  <p class="text-grey">Standard procedure</p>
+                </div>
+              </div>
+            </div>
+            <div class="card md:min-h-[468px]">
+              <div class="m-auto text-center">
+                <div class="text-xl font-bold text-dark">No Documents</div>
+                <p class="mb-[30px] mt-5 text-grey">
+                  Add guidance or design style for <br />
+                  your employees in company
+                </p>
+                <button type="button" class="btn btn-primary">
+                  Upload File
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- History -->
+          <div>
+            <!-- Section Header -->
+            <div class="mb-[30px]">
+              <div class="flex items-center justify-between gap-6">
+                <div>
+                  <div class="text-xl font-medium text-dark">History</div>
+                  <p class="text-grey">Track the flow</p>
+                </div>
+              </div>
+            </div>
+            <div class="card min-h-[468px]">
+              <div class="m-auto text-center">
+                <div class="text-xl font-bold text-dark">No History</div>
+                <p class="mb-[30px] mt-5 text-grey">
+                  Information of employees added <br />
+                  and promoting shown here
+                </p>
+                <button type="button" class="btn btn-primary">
+                  Upload File
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script/sidebarToggler.js"></script>
+  </body>
+</html>
